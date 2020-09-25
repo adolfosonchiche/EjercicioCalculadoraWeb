@@ -8,11 +8,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@ include file = "index.html" %>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CALCULADORA</title>
-    </head>
     <body>
 
         <% if (request.getParameter("n1")
@@ -72,7 +67,7 @@
 
         %>
         <P>     
-            <B>Los resultados son:</B>     
+            <B>Los resultados son:</B>:     
         <P>     
             <%-- imprimimos los datos en el portal --%>
             <% if (suma != null) {%>
