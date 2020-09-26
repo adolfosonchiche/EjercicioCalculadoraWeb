@@ -40,7 +40,7 @@
 
         </FORM> 
         <% } else { %>
-        <%-- Declaramos nuestra variables String--%>
+        <%-- Declaramos nuestra variables y obtenemos los valores--%>
         <%! String n1, n2, suma, producto, mayor, potencia, binario;%>     
         <%
             n1 = request.getParameter("n1");
@@ -51,11 +51,11 @@
             potencia = request.getParameter("potencia");
             binario = request.getParameter("bianrio");
         %>     
-        <%
+        <% //creamos la instanca calcular para realizar las operaciones
             Calcular calc = new Calcular();
             calc.realizarOperacion(n1, n2, suma, producto, mayor, potencia, binario);
 
-            //obtenemos los resultados de las operaciones
+            //obtenemos los resultados de las operaciones con el objeto calc
             double sum, pdt, mayr, ptn;
             String bi1, bi2;
             sum = calc.getSuma();

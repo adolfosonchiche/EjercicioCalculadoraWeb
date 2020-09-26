@@ -5,6 +5,8 @@ package com.adolfo.webcalculadora;
  * @author hectoradolfo
  */
 public class Calcular {
+    
+    //declaracion de variables
     private double suma;
     private double producto;
     private double mayor;
@@ -14,23 +16,34 @@ public class Calcular {
     private double valor1;
     private double valor2;
     
+    /**
+     * metodo que realiza las operaciones solicitas 
+     * segun los parametros recibidos
+     * @param n1
+     * @param n2
+     * @param sum
+     * @param prd
+     * @param may
+     * @param pt
+     * @param bn
+     */
     public void realizarOperacion(String n1, String n2, String sum, String prd, 
             String may, String pt, String bn){
         try {
             this.valor1 = Double.parseDouble(n1);
             this.valor2 = Double.parseDouble(n2);
             
-            if (sum != null) {
+            if (sum != null) { //si se pide una suma
                 this.suma = valor1 + valor2;
                 
             } 
             
-            if (prd != null){
+            if (prd != null){ //si se pide una multiplicacion
                 this.producto = valor1 * valor2;
                 
             } 
             
-            if (may != null){
+            if (may != null){ //si se pide saber el numero mayor de los dos ingresados
                 if (valor1 > valor2) {
                     this.mayor = valor1;
                 } else {
@@ -38,16 +51,16 @@ public class Calcular {
                 }              
             } 
             
-            if (pt != null){
+            if (pt != null){ //si se pide calcular una potencia
                 this.potencia = Math.pow(valor1, valor2);                
             }
             
-            if (bn != null){
+            if (bn != null){ //si se pide los valores binario 
                this.bin1 = Long.toBinaryString((long) valor1);
                this.bin2 = Long.toBinaryString((long) valor2);
             }
             
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) { //captura un error 
             System.err.println("Error en el programa\n" + e);
         }
     }
